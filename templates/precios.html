@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Precios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>💰 Precios de Servicios</h2>
+
+    <form method="post">
+        {% for servicio, valor in precios %}
+            <label>{{ servicio }}</label>
+            <input type="number" name="{{ servicio }}" value="{{ valor }}" required>
+        {% endfor %}
+
+        <button>💾 Guardar cambios</button>
+    </form>
+
+    <a href="/barbero">⬅ Volver</a>
+</div>
+
+</body>
+</html>

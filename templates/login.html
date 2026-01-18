@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>BarberApp Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>💈 BarberApp Pro</h2>
+
+    <form method="post">
+        <input 
+            type="text" 
+            name="usuario" 
+            placeholder="Tu nombre o 'barbero'" 
+            required
+        >
+
+        <input 
+            type="password" 
+            name="password" 
+            placeholder="Contraseña (solo barbero)"
+        >
+
+        <button type="submit">Entrar</button>
+    </form>
+</div>
+
+</body>
+</html>

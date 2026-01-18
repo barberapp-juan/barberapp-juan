@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendar Cita</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>📅 Agendar Cita</h2>
+
+    <form method="post">
+        <input type="date" name="fecha" required>
+        <input type="time" name="hora" required>
+
+        <select name="precio" required>
+    <option value="">Selecciona servicio</option>
+
+    {% for p in servicios %}
+        <option value="{{ p[2] }}">
+            {{ p[1] }} - ${{ p[2] }}
+        </option>
+    {% endfor %}
+</select>
+
+        <button type="submit">Agendar</button>
+    </form>
+
+    <a href="/cliente">⬅ Volver</a>
+</div>
+
+</body>
+</html>

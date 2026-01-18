@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Citas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>👤 Mis Citas</h2>
+
+    {% for cita in citas %}
+    <div class="card">
+<p>💲 Precio: ${{ cita.precio }}</p>
+        <p>📅 {{ cita.fecha }}</p>
+        <p>🕒 {{ cita.hora }}</p>
+        <p>
+            Estado:
+            <span class="estado-{{ cita.estado }}">
+                {{ cita.estado }}
+            </span>
+        </p>
+
+        <!-- BOTÓN ELIMINAR -->
+        <a href="/eliminar/{{ cita.id }}" style="color:red;">
+            🗑 Eliminar
+        </a>
+    </div>
+    {% endfor %}
+
+    <a href="/agendar">➕ Agendar nueva cita</a>
+    <a href="/logout">🚪 Salir</a>
+</div>
+
+</body>
+</html>

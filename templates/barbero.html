@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Barbero</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>💈 Panel del Barbero</h2>
+
+    <h3>💰 Ganancias del día: ${{ total }}</h3>
+<a href="/precios" class="btn">💰 Editar precios</a>
+
+
+    <!-- ====== CITAS ====== -->
+    {% for cita in citas %}
+    <div class="card">
+        <p><b>{{ cita.cliente }}</b></p>
+        <p>📅 {{ cita.fecha }}</p>
+        <p>🕒 {{ cita.hora }}</p>
+        <p>💲 ${{ cita.precio }}</p>
+
+        <p>
+            Estado:
+            <span class="estado-{{ cita.estado }}">
+                {{ cita.estado }}
+            </span>
+        </p>
+
+        <a href="/estado/{{ cita.id }}/Aceptada">✅ Aceptar</a>
+        <a href="/estado/{{ cita.id }}/Cancelada">❌ Cancelar</a>
+        <a href="/eliminar/{{ cita.id }}" style="color:red;">🗑 Eliminar</a>
+    </div>
+    {% endfor %}
+
+    <a href="/logout">🚪 Salir</a>
+</div>
+
+</body>
+</html>
