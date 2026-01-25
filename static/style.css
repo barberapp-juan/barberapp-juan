@@ -7,7 +7,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: #0f0f0f;
+    background: #000;   /* fondo negro */
+    color: #fff;        /* texto blanco */
+}
+
+p, span, label, small, li {
+    color: #fff;
 }
 
 
@@ -58,7 +63,6 @@ button:hover {
     background: #1e1e1e;
     padding: 15px;
     border-radius: 12px;
-    margin-bottom: 12px;
 }
 
 /* ESTADOS */
@@ -101,10 +105,46 @@ input, select, button {
     margin-bottom: 10px;
     font-size: 16px;
 }
+ 
+/* FORZAR COLORES VISIBLES */
+h1, h2, h3, h4, h5, p, span, label, small, li {
+    color: white !important;
+}
 
 button {
-    background: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    background: linear-gradient(45deg, gold, goldenrod);
+    color: black !important;
+    border-radius: 12px;
+    font-weight: bold;
 }
+
+a {
+    color: gold !important;
+}
+
+/* ====== FIX TOTAL DE COLORES ====== */
+
+* {
+    color: white !important;
+}
+
+h1, h2, h3 {
+    color: gold !important;
+}
+
+button, .btn, input[type="submit"] {
+    background: linear-gradient(45deg, gold, goldenrod) !important;
+    color: black !important;
+    font-weight: bold;
+}
+
+input {
+    background: #222 !important;
+    color: white !important;
+}
+
+.card {
+    background: #1e1e1e !important;
+}
+
+
